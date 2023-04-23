@@ -17,11 +17,30 @@ final class SampleViewModel: ObservableObject {
 import XCTest
 
 final class SampleViewModelTests: XCTestCase {
- 
+    
     func test_init_shouldSetInitialValue() {
         
-        let sut = SampleViewModel(initialValue: "abcd")
+        let (sut, spy) = makeSUT(initialValue: "abcd")
         
-        XCTAssertEqual(sut.text, "abcd")
+        XCTAssertEqual(spy.values, ["abcd"])
+        XCTAssertNotNil(sut.text)
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeSUT(
+        initialValue: String
+    ) -> (
+        sut: SampleViewModel,
+        spy: ValueSpy<String>
+    ) {
+        
+        let sut = SampleViewModel(initialValue: initialValue)
+        let spy = ValueSpy(sut.$text)
+        
+        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(spy)
+        
+        return (sut, spy)
     }
 }
