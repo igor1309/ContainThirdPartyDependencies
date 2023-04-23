@@ -11,15 +11,20 @@ import SampleViewModelComponent
 import XCTest
 
 final class SampleVMClientTests: XCTestCase {
-
+    
     func test_shouldReplayValues() {
         
         let subject = PassthroughSubject<Int, Never>()
+        let scheduler = DispatchQueue.test
         let sampleViewModel = SampleViewModel(
             initialValue: "ABC",
-            publisher: subject.eraseToAnyPublisher()
+            publisher: subject.eraseToAnyPublisher(),
+            scheduler: scheduler.eraseToAnyScheduler()
         )
-        let sut = SampleVMClient(sampleViewModel: sampleViewModel)
+        let sut = SampleVMClient(
+            sampleViewModel: sampleViewModel,
+            scheduler: scheduler.eraseToAnyScheduler()
+        )
         
         let spy = ValueSpy(sut.$capitalisedText)
         
@@ -27,8 +32,8 @@ final class SampleVMClientTests: XCTestCase {
         
         XCTAssertEqual(spy.values, [""])
         
-        XCTWaiter().wait(for: [.init()], timeout: 0.1)
-
+        scheduler.advance()
+        
         XCTAssertEqual(spy.values, ["", "Abc", "1"])
     }
 }
