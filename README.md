@@ -12,6 +12,8 @@ Exploring a way to contain third-party dependencies.
 Use dedicated files within modules to import third-party dependencies and use various techniques to adapt:
 
 - type-aliases,
-- static methods or properties,
+- static methods or properties.
+
+In case a decision to remove dependency is made it would be easier to swap implementation contained in one file.
 
 ![diagram](./Docs/Diagram.drawio.png)
