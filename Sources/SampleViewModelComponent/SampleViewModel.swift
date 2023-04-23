@@ -6,7 +6,6 @@
 //
 
 import Combine
-import CombineSchedulers
 import Foundation
 
 public final class SampleViewModel: ObservableObject {
@@ -16,7 +15,7 @@ public final class SampleViewModel: ObservableObject {
     public init(
         initialValue: String,
         publisher: AnyPublisher<Int, Never>,
-        scheduler: AnySchedulerOf<DispatchQueue> = .main
+        scheduler: AnySchedulerOfDispatchQueue = .makeMain()
     ) {
         self.text = initialValue
         

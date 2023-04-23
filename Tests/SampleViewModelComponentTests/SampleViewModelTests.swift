@@ -6,7 +6,6 @@
 //
 
 import Combine
-import CombineSchedulers
 import SampleViewModelComponent
 import XCTest
 
@@ -48,7 +47,7 @@ final class SampleViewModelTests: XCTestCase {
     
     private func makeSUT(
         initialValue: String,
-        scheduler: AnySchedulerOf<DispatchQueue>
+        scheduler: AnySchedulerOfDispatchQueue
     ) -> (
         sut: SampleViewModel,
         spy: ValueSpy<String>,
