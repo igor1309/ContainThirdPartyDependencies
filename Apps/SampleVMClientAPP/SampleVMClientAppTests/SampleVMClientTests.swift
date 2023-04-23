@@ -16,17 +16,10 @@ final class SampleVMClientTests: XCTestCase {
         
         let subject = PassthroughSubject<Int, Never>()
         let scheduler = DispatchQueue.test
-        let sampleViewModel = SampleViewModel(
-            initialValue: "ABC",
-            publisher: subject.eraseToAnyPublisher(),
+        let (sut, spy) = makeSUT(
+            subject: subject,
             scheduler: scheduler.eraseToAnyScheduler()
         )
-        let sut = SampleVMClient(
-            sampleViewModel: sampleViewModel,
-            scheduler: scheduler.eraseToAnyScheduler()
-        )
-        
-        let spy = ValueSpy(sut.$capitalisedText)
         
         subject.send(1)
         
@@ -35,5 +28,35 @@ final class SampleVMClientTests: XCTestCase {
         scheduler.advance()
         
         XCTAssertEqual(spy.values, ["", "Abc", "1"])
+        XCTAssertNotNil(sut)
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeSUT(
+        initialValue: String = "ABC",
+        subject: PassthroughSubject<Int, Never>,
+        scheduler: AnySchedulerOfDispatchQueue
+    ) -> (
+        sut: SampleVMClient,
+        spy: ValueSpy<String>
+    ) {
+        
+        let sampleViewModel = SampleViewModel(
+            initialValue: initialValue,
+            publisher: subject.eraseToAnyPublisher(),
+            scheduler: scheduler.eraseToAnyScheduler()
+        )
+        let sut = SampleVMClient(
+            sampleViewModel: sampleViewModel,
+            scheduler: scheduler.eraseToAnyScheduler()
+        )
+        let spy = ValueSpy(sut.$capitalisedText)
+        
+        
+        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(spy)
+        
+        return (sut, spy)
     }
 }
