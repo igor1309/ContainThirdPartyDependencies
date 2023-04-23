@@ -1,5 +1,5 @@
 import XCTest
-@testable import ContainThirdPartyDependencies
+@testable import SampleViewModelComponent
 
 final class ContainThirdPartyDependenciesTests: XCTestCase {
     func testExample() throws {

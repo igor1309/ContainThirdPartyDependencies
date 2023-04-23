@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "A1E5F43D-ECCD-4F1C-8FA2-FFFDF945CE46",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SampleViewModelComponentTests",
+        "name" : "SampleViewModelComponentTests"
+      }
+    }
+  ],
+  "version" : 1
+}
