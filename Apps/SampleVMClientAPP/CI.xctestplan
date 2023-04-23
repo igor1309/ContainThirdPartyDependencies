@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "EBE16B74-A96B-49B4-B477-655BB592F2F5",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SampleVMClientApp.xcodeproj",
+      "identifier" : "2AF3162C29F554900085EB04",
+      "name" : "SampleVMClientApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..\/..",
+        "identifier" : "SampleViewModelComponentTests",
+        "name" : "SampleViewModelComponentTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SampleVMClientApp.xcodeproj",
+        "identifier" : "2AF3163D29F554900085EB04",
+        "name" : "SampleVMClientAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

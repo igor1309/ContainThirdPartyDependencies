@@ -33,6 +33,7 @@
 		2A609B3529F5563200486630 /* SampleVMClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVMClientTests.swift; sourceTree = "<group>"; };
 		2A609B3A29F5570800486630 /* ValueSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSpy.swift; sourceTree = "<group>"; };
 		2A609B3B29F5570800486630 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		2A609B3E29F5586000486630 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		2AF3162D29F554900085EB04 /* SampleVMClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleVMClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF3163029F554900085EB04 /* SampleVMClientAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVMClientAppApp.swift; sourceTree = "<group>"; };
 		2AF3163229F554900085EB04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		2AF3162429F554900085EB04 = {
 			isa = PBXGroup;
 			children = (
+				2A609B3E29F5586000486630 /* CI.xctestplan */,
 				2AF3165B29F554B90085EB04 /* ContainThirdPartyDependencies */,
 				2AF3162F29F554900085EB04 /* SampleVMClientApp */,
 				2AF3164129F554910085EB04 /* SampleVMClientAppTests */,
