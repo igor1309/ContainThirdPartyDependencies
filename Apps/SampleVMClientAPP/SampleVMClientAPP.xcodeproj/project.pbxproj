@@ -34,6 +34,7 @@
 		2A609B3A29F5570800486630 /* ValueSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSpy.swift; sourceTree = "<group>"; };
 		2A609B3B29F5570800486630 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		2A609B3E29F5586000486630 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
+		2A609B4029F55AB200486630 /* AnySchedulerOfDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnySchedulerOfDispatchQueue.swift; sourceTree = "<group>"; };
 		2AF3162D29F554900085EB04 /* SampleVMClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleVMClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF3163029F554900085EB04 /* SampleVMClientAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVMClientAppApp.swift; sourceTree = "<group>"; };
 		2AF3163229F554900085EB04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +80,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		2A609B3F29F55AB200486630 /* ThirdPartyDependencies */ = {
+			isa = PBXGroup;
+			children = (
+				2A609B4029F55AB200486630 /* AnySchedulerOfDispatchQueue.swift */,
+			);
+			path = ThirdPartyDependencies;
+			sourceTree = "<group>";
+		};
 		2AF3162429F554900085EB04 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +114,7 @@
 			children = (
 				2AF3163029F554900085EB04 /* SampleVMClientAppApp.swift */,
 				2AF3163229F554900085EB04 /* ContentView.swift */,
+				2A609B3F29F55AB200486630 /* ThirdPartyDependencies */,
 				2A609B3029F5551500486630 /* SampleVMClient.swift */,
 				2AF3163429F554900085EB04 /* Assets.xcassets */,
 				2AF3163629F554900085EB04 /* SampleVMClientApp.entitlements */,
