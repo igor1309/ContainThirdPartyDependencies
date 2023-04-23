@@ -13,6 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .combineSchedulers,
+        .tagged,
     ],
     targets: [
         .sampleViewModelComponent,
@@ -36,6 +37,7 @@ private extension Target {
         name: .sampleViewModelComponent,
         dependencies: [
             .combineSchedulers,
+            .tagged,
         ]
     )
     static let sampleViewModelComponentTests = testTarget(
