@@ -13,7 +13,7 @@ final class SampleViewModelTests: XCTestCase {
     
     func test_shouldPublishStrings() {
         
-        let scheduler = DispatchQueue.test
+        let scheduler = makeTestScheduler()
         let (sut, spy, subject) = makeSUT(
             initialValue: "abcd",
             scheduler: scheduler.eraseToAnyScheduler()
@@ -31,7 +31,7 @@ final class SampleViewModelTests: XCTestCase {
     
     func test_shouldPublishStrings_onImmediate() {
         
-        let scheduler = DispatchQueue.immediate
+        let scheduler = makeImmediateScheduler()
         let (sut, spy, subject) = makeSUT(
             initialValue: "abcd",
             scheduler: scheduler.eraseToAnyScheduler()
