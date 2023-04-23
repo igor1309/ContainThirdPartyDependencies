@@ -13,6 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .combineSchedulers,
+        .customDump,
         .tagged,
     ],
     targets: [
@@ -44,6 +45,7 @@ private extension Target {
         name: .sampleViewModelComponentTests,
         dependencies: [
             .combineSchedulers,
+            .customDump,
             .sampleViewModelComponent,
         ]
     )
@@ -69,6 +71,10 @@ private extension Package.Dependency {
     static let casePaths = Package.Dependency.package(
         url: .pointFreeGitHub + .case_paths,
         from: .init(0, 10, 1)
+    )
+    static let customDump = Package.Dependency.package(
+        url: .pointFreeGitHub + .swift_custom_dump,
+        from: .init(0, 10, 2)
     )
     static let combineSchedulers = Package.Dependency.package(
         url: .pointFreeGitHub + .combine_schedulers,
@@ -98,6 +104,10 @@ private extension Target.Dependency {
         name: .casePaths,
         package: .case_paths
     )
+    static let customDump = product(
+        name: .customDump,
+        package: .swift_custom_dump
+    )
     static let combineSchedulers = product(
         name: .combineSchedulers,
         package: .combine_schedulers
@@ -126,6 +136,9 @@ private extension String {
     
     static let casePaths = "CasePaths"
     static let case_paths = "swift-case-paths"
+    
+    static let customDump = "CustomDump"
+    static let swift_custom_dump = "swift-custom-dump"
     
     static let combineSchedulers = "CombineSchedulers"
     static let combine_schedulers = "combine-schedulers"
