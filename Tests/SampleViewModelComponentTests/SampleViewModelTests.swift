@@ -7,25 +7,7 @@
 
 import Combine
 import CombineSchedulers
-
-final class SampleViewModel: ObservableObject {
-    
-    @Published private(set) var text: String
-    
-    init(
-        initialValue: String,
-        publisher: AnyPublisher<Int, Never>,
-        scheduler: AnySchedulerOf<DispatchQueue> = .main
-    ) {
-        self.text = initialValue
-        
-        publisher
-            .map(String.init)
-            .receive(on: scheduler)
-            .assign(to: &$text)
-    }
-}
-
+import SampleViewModelComponent
 import XCTest
 
 final class SampleViewModelTests: XCTestCase {
