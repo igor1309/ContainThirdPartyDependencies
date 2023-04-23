@@ -5,12 +5,22 @@
 //  Created by Igor Malyarov on 23.04.2023.
 //
 
+import Combine
+
 final class SampleViewModel: ObservableObject {
     
     @Published private(set) var text: String
     
-    init(initialValue: String) {
+    init(
+        initialValue: String,
+        publisher: AnyPublisher<Int, Never>
+    ) {
         self.text = initialValue
+        
+        publisher
+            .map(String.init)
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$text)
     }
 }
 
@@ -20,9 +30,20 @@ final class SampleViewModelTests: XCTestCase {
     
     func test_init_shouldSetInitialValue() {
         
-        let (sut, spy) = makeSUT(initialValue: "abcd")
+        let (sut, spy, _) = makeSUT(initialValue: "abcd")
         
         XCTAssertEqual(spy.values, ["abcd"])
+        XCTAssertNotNil(sut.text)
+    }
+    
+    func test_shouldPublishStrings() {
+        
+        let (sut, spy, subject) = makeSUT(initialValue: "abcd")
+        
+        subject.send(1)
+        _ = XCTWaiter().wait(for: [.init()], timeout: 0.1)
+        
+        XCTAssertEqual(spy.values, ["abcd", "1"])
         XCTAssertNotNil(sut.text)
     }
     
@@ -32,15 +53,21 @@ final class SampleViewModelTests: XCTestCase {
         initialValue: String
     ) -> (
         sut: SampleViewModel,
-        spy: ValueSpy<String>
+        spy: ValueSpy<String>,
+        subject: PassthroughSubject<Int, Never>
     ) {
         
-        let sut = SampleViewModel(initialValue: initialValue)
+        let subject = PassthroughSubject<Int, Never>()
+        let sut = SampleViewModel(
+            initialValue: initialValue,
+            publisher: subject.eraseToAnyPublisher()
+        )
         let spy = ValueSpy(sut.$text)
         
         trackForMemoryLeaks(sut)
         trackForMemoryLeaks(spy)
+        trackForMemoryLeaks(subject)
         
-        return (sut, spy)
+        return (sut, spy, subject)
     }
 }
