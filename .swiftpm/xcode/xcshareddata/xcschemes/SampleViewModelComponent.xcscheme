@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:.swiftpm/SampleViewModelComponent.xctestplan"
+            reference = "container:../SampleViewModelComponent copy.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

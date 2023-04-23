@@ -5,6 +5,7 @@ import PackageDescription
 let package = Package(
     name: "ContainThirdPartyDependencies",
     platforms: [
+        .iOS(.v15),
         .macOS(.v12),
     ],
     products: [
