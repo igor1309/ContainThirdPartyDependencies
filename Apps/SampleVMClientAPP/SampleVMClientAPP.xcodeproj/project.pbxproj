@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A609B3129F5551500486630 /* SampleVMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A609B3029F5551500486630 /* SampleVMClient.swift */; };
+		2A609B3429F5552A00486630 /* SampleViewModelComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 2A609B3329F5552A00486630 /* SampleViewModelComponent */; };
+		2A609B3629F5563200486630 /* SampleVMClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A609B3529F5563200486630 /* SampleVMClientTests.swift */; };
+		2A609B3C29F5570800486630 /* ValueSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A609B3A29F5570800486630 /* ValueSpy.swift */; };
+		2A609B3D29F5570800486630 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A609B3B29F5570800486630 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2AF3163129F554900085EB04 /* SampleVMClientAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF3163029F554900085EB04 /* SampleVMClientAppApp.swift */; };
 		2AF3163329F554900085EB04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF3163229F554900085EB04 /* ContentView.swift */; };
 		2AF3163529F554900085EB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF3163429F554900085EB04 /* Assets.xcassets */; };
 		2AF3163929F554900085EB04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF3163829F554900085EB04 /* Preview Assets.xcassets */; };
-		2AF3164329F554910085EB04 /* SampleVMClientAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF3164229F554910085EB04 /* SampleVMClientAppTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A609B3029F5551500486630 /* SampleVMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVMClient.swift; sourceTree = "<group>"; };
+		2A609B3529F5563200486630 /* SampleVMClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVMClientTests.swift; sourceTree = "<group>"; };
+		2A609B3A29F5570800486630 /* ValueSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSpy.swift; sourceTree = "<group>"; };
+		2A609B3B29F5570800486630 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		2AF3162D29F554900085EB04 /* SampleVMClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleVMClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF3163029F554900085EB04 /* SampleVMClientAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVMClientAppApp.swift; sourceTree = "<group>"; };
 		2AF3163229F554900085EB04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,7 +40,7 @@
 		2AF3163629F554900085EB04 /* SampleVMClientApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleVMClientApp.entitlements; sourceTree = "<group>"; };
 		2AF3163829F554900085EB04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2AF3163E29F554910085EB04 /* SampleVMClientAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleVMClientAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AF3164229F554910085EB04 /* SampleVMClientAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVMClientAppTests.swift; sourceTree = "<group>"; };
+		2AF3165B29F554B90085EB04 /* ContainThirdPartyDependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ContainThirdPartyDependencies; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A609B3429F5552A00486630 /* SampleViewModelComponent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,12 +62,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A609B3229F5552A00486630 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A609B3929F5570800486630 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2A609B3A29F5570800486630 /* ValueSpy.swift */,
+				2A609B3B29F5570800486630 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2AF3162429F554900085EB04 = {
 			isa = PBXGroup;
 			children = (
+				2AF3165B29F554B90085EB04 /* ContainThirdPartyDependencies */,
 				2AF3162F29F554900085EB04 /* SampleVMClientApp */,
 				2AF3164129F554910085EB04 /* SampleVMClientAppTests */,
 				2AF3162E29F554900085EB04 /* Products */,
+				2A609B3229F5552A00486630 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +103,7 @@
 			children = (
 				2AF3163029F554900085EB04 /* SampleVMClientAppApp.swift */,
 				2AF3163229F554900085EB04 /* ContentView.swift */,
+				2A609B3029F5551500486630 /* SampleVMClient.swift */,
 				2AF3163429F554900085EB04 /* Assets.xcassets */,
 				2AF3163629F554900085EB04 /* SampleVMClientApp.entitlements */,
 				2AF3163729F554900085EB04 /* Preview Content */,
@@ -94,7 +122,8 @@
 		2AF3164129F554910085EB04 /* SampleVMClientAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				2AF3164229F554910085EB04 /* SampleVMClientAppTests.swift */,
+				2A609B3929F5570800486630 /* Helpers */,
+				2A609B3529F5563200486630 /* SampleVMClientTests.swift */,
 			);
 			path = SampleVMClientAppTests;
 			sourceTree = "<group>";
@@ -115,6 +144,9 @@
 			dependencies = (
 			);
 			name = SampleVMClientApp;
+			packageProductDependencies = (
+				2A609B3329F5552A00486630 /* SampleViewModelComponent */,
+			);
 			productName = SampleVMClientApp;
 			productReference = 2AF3162D29F554900085EB04 /* SampleVMClientApp.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +184,7 @@
 					};
 					2AF3163D29F554900085EB04 = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 						TestTargetID = 2AF3162C29F554900085EB04;
 					};
 				};
@@ -201,6 +234,7 @@
 			files = (
 				2AF3163329F554900085EB04 /* ContentView.swift in Sources */,
 				2AF3163129F554900085EB04 /* SampleVMClientAppApp.swift in Sources */,
+				2A609B3129F5551500486630 /* SampleVMClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AF3164329F554910085EB04 /* SampleVMClientAppTests.swift in Sources */,
+				2A609B3C29F5570800486630 /* ValueSpy.swift in Sources */,
+				2A609B3629F5563200486630 /* SampleVMClientTests.swift in Sources */,
+				2A609B3D29F5570800486630 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +449,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
@@ -425,6 +462,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleVMClientApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SampleVMClientApp";
@@ -436,6 +474,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VRVJ9YNRQU;
@@ -485,6 +524,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A609B3329F5552A00486630 /* SampleViewModelComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SampleViewModelComponent;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2AF3162529F554900085EB04 /* Project object */;
 }
