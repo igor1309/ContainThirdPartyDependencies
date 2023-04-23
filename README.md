@@ -1,3 +1,7 @@
 # ContainThirdPartyDependencies
 
-A description of this package.
+Exploring a way to contain third-party dependencies.
+
+## Goal
+
+- Reduce `import`'s of third-party dependencies.
